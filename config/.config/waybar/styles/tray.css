@@ -1,0 +1,11 @@
+/* 系统托盘样式 */
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(243, 139, 168, 0.3);
+    border-radius: 8px;
+}

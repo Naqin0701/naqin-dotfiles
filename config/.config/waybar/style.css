@@ -1,0 +1,16 @@
+/* Waybar 主样式文件 - 导入所有模块 */
+
+/* 导入全局样式 */
+@import "styles/global.css";
+
+/* 导入各模块样式 */
+@import "styles/workspaces.css";
+@import "styles/window.css";
+@import "styles/clock.css";
+@import "styles/battery.css";
+@import "styles/network.css";
+@import "styles/pulseaudio.css";
+@import "styles/backlight.css";
+@import "styles/cpu.css";
+@import "styles/memory.css";
+@import "styles/tray.css";
