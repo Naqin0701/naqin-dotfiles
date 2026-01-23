@@ -54,3 +54,41 @@ flatpak install flathub com.tencent.WeChat
 ```bash
 yay -S visual-studio-code-bin
 ```
+
+## Extra
+
+### Install LazyVim
+
+```bash
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+```
+
+### Setup ATK mouse
+
+- [https://www.reddit.com/r/linux_gaming/comments/1feizmm/atk_hub_not_working/?rdt=53952](Tutorial)
+
+```bash
+sudo pacman -S usbutils
+```
+
+```bash
+lsusb | rg mouse
+
+# ======== Output ========
+# Bus 005 Device 003: ID 373b:11d9 Compx Wireless mouse 8k dongle-L
+# ID is : 373b
+```
+
+```bash
+sudo nvim /etc/udev/rules.d/50-usb-atk.rules
+
+# ======== Content ========
+# Format is : KERNEL=="hidraw*", ATTRS{idVendor}=="<idVendor>", MODE="0666"
+# So in my case is: KERNEL=="hidraw*", ATTRS{idVendor}=="373b", MODE="0666"
+```
+
+```bash
+sudo usermod -a -G input naqin
+# Format: usermod -a -G input <your username>
+```
