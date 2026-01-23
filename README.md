@@ -19,6 +19,7 @@ sudo pacman -S starship
 sudo pacman -S fnm
 sudo pacman -S base-devel
 sudo pacman -S zed
+sudo pacman -S bat
 ```
 
 ## Add tsinghua archlinuxcn source
