@@ -20,6 +20,8 @@ sudo pacman -S fnm
 sudo pacman -S base-devel
 sudo pacman -S zed
 sudo pacman -S bat
+sudo pacman -S podman podman-compose
+sudo pacman -S dust bottom
 ```
 
 ## Add tsinghua archlinuxcn source
@@ -49,20 +51,40 @@ After that, run this command:
 flatpak install flathub com.tencent.WeChat
 ```
 
+`````bash
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+flatpak install com.freerdp.FreeRDP
+```
+
 ## AUR pkgs
 
 ```bash
 yay -S visual-studio-code-bin
+yay -S winboat-bin
+yay -S docker docker-compose
+yay -S wps-office
 ```
 
 ## Extra
+
+### Docker Setup
+
+````bash
+sudo systemctl start docker.service
+sudo systemctl enable docker.service
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
 
 ### Install LazyVim
 
 ```bash
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
-```
+`````
 
 ### Setup ATK mouse
 
@@ -91,4 +113,16 @@ sudo nvim /etc/udev/rules.d/50-usb-atk.rules
 ```bash
 sudo usermod -a -G input naqin
 # Format: usermod -a -G input <your username>
+```
+
+### Setup rime-ice
+
+```bash
+cd ~/.local/share/fcitx5
+
+git clone https://github.com/iDvel/rime-ice.git Rime --depth 1
+
+mv rime rime.bak
+
+mv Rime rime
 ```
