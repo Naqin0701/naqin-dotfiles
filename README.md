@@ -166,3 +166,9 @@ sudo pacman -S biber
 ```bash
 fc-cache -fv
 ```
+
+### Setup github cli
+
+```bash
+gh auth login
+```
