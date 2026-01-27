@@ -26,6 +26,7 @@ sudo pacman -S fastfetch
 sudo pacman -S obsidian
 sudo pacman -S tabiew
 sudo pacman -S dysk
+sudo pacman -S github-cli
 ```
 
 ## Add tsinghua archlinuxcn source
