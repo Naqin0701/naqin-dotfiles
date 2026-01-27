@@ -1,10 +1,11 @@
 # Dynamic theme colors
 theme = Catppuccin Macchiato
-background-opacity = 0.85
+background-opacity = 0.95
 background-blur=16
 
 # Font
 font-family = "JetBrainsMono Nerd Font"
+font-family = "Maple Mono NF CN"
 font-style = Regular
 font-size = 12
 

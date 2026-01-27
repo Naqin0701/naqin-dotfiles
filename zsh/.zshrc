@@ -51,6 +51,7 @@ alias zed="zeditor"
 # Environment variables (optional)
 # -----------------
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export http_proxy=http://127.0.0.1:7897
 export https_proxy=http://127.0.0.1:7897
 export all_proxy=sockes5://127.0.0.1:7897
@@ -70,6 +71,23 @@ function z() {
     else
         __zoxide_z "$@"
     fi
+}
+# Mac-like open command
+function open() {
+    if [[ $# -eq 0 ]]; then
+        # No arguments → open current directory
+        xdg-open . >/dev/null 2>&1
+        return
+    fi
+
+    local file
+    for file in "$@"; do
+        if [[ -e "$file" || "$file" =~ ^(https?|ftp):// ]]; then
+            xdg-open "$file" >/dev/null 2>&1 &
+        else
+            print -u2 "open: cannot access '$file': No such file or directory"
+        fi
+    done
 }
 
 # fzf

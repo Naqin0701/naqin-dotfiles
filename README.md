@@ -22,6 +22,10 @@ sudo pacman -S zed
 sudo pacman -S bat
 sudo pacman -S podman podman-compose
 sudo pacman -S dust bottom
+sudo pacman -S fastfetch
+sudo pacman -S obsidian
+sudo pacman -S tabiew
+sudo pacman -S dysk
 ```
 
 ## Add tsinghua archlinuxcn source
@@ -49,9 +53,10 @@ After that, run this command:
 
 ```bash
 flatpak install flathub com.tencent.WeChat
+flatpak install flathub com.tencent.wemeet
 ```
 
-`````bash
+```bash
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak install com.freerdp.FreeRDP
@@ -64,13 +69,18 @@ yay -S visual-studio-code-bin
 yay -S winboat-bin
 yay -S docker docker-compose
 yay -S wps-office
+yay -S nutstore
+yay -S claude-code
+yay -S opencode-bin
+yay -S cc-switch-bin
+yay -S fresh-editor
 ```
 
 ## Extra
 
 ### Docker Setup
 
-````bash
+```bash
 sudo systemctl start docker.service
 sudo systemctl enable docker.service
 
@@ -84,7 +94,7 @@ newgrp docker
 ```bash
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
-`````
+```
 
 ### Setup ATK mouse
 
@@ -125,4 +135,33 @@ git clone https://github.com/iDvel/rime-ice.git Rime --depth 1
 mv rime rime.bak
 
 mv Rime rime
+```
+
+### Setup Claude Code
+
+Edit `~/.claude.json`
+
+Add `hasCompletedOnboarding: true`
+
+### Install Latex
+
+```bash
+sudo pacman -S --needed texlive-basic \
+                texlive-latex \
+                texlive-mathscience \
+                texlive-pictures \
+                texlive-fontsrecommended \
+                texlive-langchinese \
+                texlive-bibtexextra \
+                texlive-xetex \
+                texlive-langextra \
+                texlive-latexrecommended \
+                texlive
+# Formatter
+yay -S tex-fmt
+sudo pacman -S biber
+```
+
+```bash
+fc-cache -fv
 ```
