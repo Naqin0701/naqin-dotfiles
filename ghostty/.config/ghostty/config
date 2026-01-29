@@ -1,6 +1,6 @@
 # Dynamic theme colors
-theme = Catppuccin Macchiato
-background-opacity = 0.95
+theme = Rose Pine
+background-opacity = 0.90
 background-blur=16
 
 # Font
@@ -10,6 +10,7 @@ font-style = Regular
 font-size = 12
 
 # Window
+window-decoration = none
 window-theme = ghostty
 window-padding-x = 8
 window-padding-y = 3
