@@ -1,35 +1,12 @@
-# Setup Note
+# Naqin Dotfiles
 
 ## Install Packages
 
 ```bash
-sudo pacman -S zsh ghostty
-sudo pacman -S eza zoxide fzf ripgrep
-sudo pacman -S flatpak
-sudo pacman -S fcitx5-im
-sudo pacman -S fcitx5-rime
-sudo pacman -S neovim
-sudo pacman -S clash-verge-rev  # must have archlinuxcn
-sudo pacman -S yazi ffmpeg 7zip jq poppler fd resvg imagemagick
-sudo pacman -S git
-sudo pacman -S vivaldi
-sudo pacman -S stow
-sudo pacman -S ttf-jetbrains-mono-nerd
-sudo pacman -S starship
-sudo pacman -S fnm
-sudo pacman -S base-devel
-sudo pacman -S zed
-sudo pacman -S bat
-sudo pacman -S podman podman-compose
-sudo pacman -S dust bottom
-sudo pacman -S fastfetch
-sudo pacman -S obsidian
-sudo pacman -S tabiew
-sudo pacman -S dysk
-sudo pacman -S github-cli
+sudo pacman -S --needed zsh ghostty eza zoxide fzf ripgrep flatpak fcitx5-im fcitx5-rime neovim yazi ffmpeg 7zip jq poppler fd resvg imagemagick git base-devel vivaldi stow starship zed bat dust bottom fastfetch obsidian tabiew dysk github-cli usbutils fnm
 ```
 
-## Add tsinghua archlinuxcn source
+## Setup archlinuxcn source
 
 - [https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/](tsinghua archlinuxcn)
 
@@ -48,56 +25,34 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 
 After that, run this command:
 
-`pacman -Sy archlinuxcn-keyring`
+`sudo pacman -Sy archlinuxcn-keyring`
 
-## Flatpak pkgs
+### Install Clash
+
+```bash
+sudo pacman -S clash-verge-rev
+```
+
+## Install Flatpak Packages
 
 ```bash
 flatpak install flathub com.tencent.WeChat
 flatpak install flathub com.tencent.wemeet
 ```
 
-```bash
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-flatpak install com.freerdp.FreeRDP
-```
-
-## AUR pkgs
+## Install aur Packages
 
 ```bash
-yay -S visual-studio-code-bin
-yay -S winboat-bin
-yay -S docker docker-compose
-yay -S wps-office
-yay -S nutstore
-yay -S claude-code
-yay -S opencode-bin
-yay -S cc-switch-bin
-yay -S fresh-editor
+yay -S --needed visual-studio-code-bin nutstore claude-code opencode-bin cc-switch-bin localsend-bin
 ```
 
-## Extra
-
-### Docker Setup
+## Install fonts
 
 ```bash
-sudo systemctl start docker.service
-sudo systemctl enable docker.service
-
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
+sudo pacman -S ttf-jetbrains-mono-nerd
 ```
 
-### Install LazyVim
-
-```bash
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-rm -rf ~/.config/nvim/.git
-```
-
-### Setup ATK mouse
+## Setup ATK mouse
 
 - [https://www.reddit.com/r/linux_gaming/comments/1feizmm/atk_hub_not_working/?rdt=53952](Tutorial)
 
@@ -126,7 +81,7 @@ sudo usermod -a -G input naqin
 # Format: usermod -a -G input <your username>
 ```
 
-### Setup rime-ice
+## Setup rime-ice
 
 ```bash
 cd ~/.local/share/fcitx5
@@ -138,37 +93,8 @@ mv rime rime.bak
 mv Rime rime
 ```
 
-### Setup Claude Code
+## Setup Claude Code
 
 Edit `~/.claude.json`
 
-Add `hasCompletedOnboarding: true`
-
-### Install Latex
-
-```bash
-sudo pacman -S --needed texlive-basic \
-                texlive-latex \
-                texlive-mathscience \
-                texlive-pictures \
-                texlive-fontsrecommended \
-                texlive-langchinese \
-                texlive-bibtexextra \
-                texlive-xetex \
-                texlive-langextra \
-                texlive-latexrecommended \
-                texlive
-# Formatter
-yay -S tex-fmt
-sudo pacman -S biber
-```
-
-```bash
-fc-cache -fv
-```
-
-### Setup github cli
-
-```bash
-gh auth login
-```
+Add `"hasCompletedOnboarding": true,`
