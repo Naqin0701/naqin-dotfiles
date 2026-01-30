@@ -162,4 +162,4 @@ symbol = ' '
 style = "bg:overlay fg:pine"
 format = " [](fg:overlay)[ $symbol$environment ]($style)[](fg:overlay)"
 disabled = false
-symbol = '🅒 '
+symbol = ' '
