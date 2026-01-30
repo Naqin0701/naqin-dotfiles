@@ -1,7 +1,7 @@
 # Dynamic theme colors
 theme = Rose Pine
 background-opacity = 0.90
-background-blur=16
+background-blur = 30
 
 # Font
 font-family = "JetBrainsMono Nerd Font"

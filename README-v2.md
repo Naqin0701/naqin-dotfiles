@@ -43,7 +43,7 @@ flatpak install flathub com.tencent.wemeet
 ## Install aur Packages
 
 ```bash
-yay -S --needed visual-studio-code-bin nutstore claude-code opencode-bin cc-switch-bin
+yay -S --needed visual-studio-code-bin nutstore claude-code opencode-bin cc-switch-bin localsend-bin
 ```
 
 ## Install fonts
