@@ -89,6 +89,10 @@ function open() {
         fi
     done
 }
+function startconda() {
+    source ~/miniforge3/etc/profile.d/conda.sh
+    eval "$(mamba shell hook --shell zsh)"
+}
 
 # fzf
 export FZF_DEFAULT_OPTS="
